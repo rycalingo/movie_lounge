@@ -2,24 +2,31 @@ import { Card } from "../components";
 import { Movie } from "../models/movie";
 import { useFetch } from "../hooks/useFetch";
 
-interface MovieListProps {
-	api?: string | null;
-}
+// interface ErrorResponse {
+// 	status_code?: number;
+// 	message?: string;
+// 	success?: boolean;
+// }
 
 // Url api
 // `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}`;
 
-export const MovieList = ({ api = "" }: MovieListProps) => {
-	const url = `https://api.themoviedb.org/3/${api}?api_key=${process.env.REACT_APP_API_KEY}`;
-	const { data: movies } = useFetch(url);
+const key = process.env.REACT_APP_API_KEY || "";
+
+export const MovieList = ({ apiPath = "" }) => {
+	const url = `https://api.themoviedb.org/3/${apiPath}?api_key=${key}`;
+	const { data } = useFetch(url);
+
+	const movies = data?.total_results ? data.results : null;
 
 	return (
 		<main>
 			<section className="max-w-7xl mx-auto py-7">
-				<div className="flex justify-center flex-wrap other:justify-evenly">
-					{movies?.map((movie: Movie, i) => (
-						<Card key={movie?.id ? movie?.id : i} movie={movie} />
-					))}
+				<div
+					className="flex justify-center flex-wrap
+				other:justify-evenly"
+				>
+					{movies !== null ? movies?.map((movie: Movie, i: number) => <Card key={movie?.id ? movie?.id : i} movie={movie} />) : null}
 				</div>
 			</section>
 		</main>
