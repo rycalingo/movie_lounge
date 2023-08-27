@@ -7,7 +7,7 @@ export interface Movie {
   original_language?: string,
   original_title?: string,
   overview?: string,
-  popularity?: 3413.036,
+  popularity?: number,
   poster_path?: string,
   release_date?: string,
   title?: string,
