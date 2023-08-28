@@ -8,3 +8,9 @@ main {
   min-height: 90vh;
   padding: 10px;
 }
+
+.movie-list::after {
+  content: " ";
+  flex: auto;
+  margin: 0.75rem;
+}

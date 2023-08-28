@@ -24,8 +24,8 @@ export const Search = ({ apiPath = "" }) => {
 			</section>
 			<section className="max-w-7xl mx-auto py-7">
 				<div
-					className="flex justify-start flex-wrap
-          other:justify-evenly"
+					className="movie-list flex justify-evenly flex-wrap
+					other:justify-evenly"
 				>
 					{movies !== null ? movies?.map((movie: Movie, i: number) => <Card key={movie?.id ? movie?.id : i} movie={movie} />) : null}
 				</div>
