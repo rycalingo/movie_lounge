@@ -22,12 +22,7 @@ export const MovieList = ({ apiPath = "" }) => {
 	return (
 		<main>
 			<section className="max-w-7xl mx-auto py-7">
-				<div
-					className="movie-list movie-list flex justify-evenly flex-wrap
-					other:justify-evenly"
-				>
-					{movies !== null ? movies?.map((movie: Movie, i: number) => <Card key={movie?.id ? movie?.id : i} movie={movie} />) : null}
-				</div>
+				<div className="grid gap-8 xs:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-center">{movies !== null ? movies?.map((movie: Movie, i: number) => <Card key={movie?.id ? movie?.id : i} movie={movie} />) : null}</div>
 			</section>
 		</main>
 	);
