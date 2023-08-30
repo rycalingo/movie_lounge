@@ -1,6 +1,7 @@
 import { Card } from "../components";
 import { Movie } from "../models/movie";
 import { useFetch } from "../hooks/useFetch";
+import { useEffect } from "react";
 
 // interface ErrorResponse {
 // 	status_code?: number;
@@ -13,11 +14,15 @@ import { useFetch } from "../hooks/useFetch";
 
 const key = process.env.REACT_APP_API_KEY || "";
 
-export const MovieList = ({ apiPath = "" }) => {
+export const MovieList = ({ apiPath = "", title = "" }) => {
 	const url = `https://api.themoviedb.org/3/${apiPath}?api_key=${key}`;
 	const { data } = useFetch(url);
 
 	const movies = data?.total_results ? data.results : null;
+
+	useEffect(() => {
+		document.title = `${title} - Movie Lounge`;
+	});
 
 	return (
 		<main>

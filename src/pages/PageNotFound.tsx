@@ -6,7 +6,7 @@ import pagenotfound from "../static/images/pagenotfound.png";
 
 export const PageNotFound = () => {
 	useEffect(() => {
-		document.title = `Page Not Found / Cinemate`;
+		document.title = `Page Not Found - Movie Lounge`;
 	});
 
 	return (

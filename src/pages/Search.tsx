@@ -3,10 +3,11 @@ import { Movie } from "../models/movie";
 import { useSearchParams } from "react-router-dom";
 
 import { useFetch } from "../hooks/useFetch";
+import { useEffect } from "react";
 
 const key = process.env.REACT_APP_API_KEY || "";
 
-export const Search = ({ apiPath = "" }) => {
+export const Search = ({ apiPath = "", title = "" }) => {
 	const [searchParams] = useSearchParams();
 	const searchTerm = searchParams.get("q");
 	const url = `https://api.themoviedb.org/3/${apiPath}?api_key=${key}&query=${searchTerm}`;
@@ -14,6 +15,10 @@ export const Search = ({ apiPath = "" }) => {
 	const { data } = useFetch(url);
 	console.log(data);
 	const movies = data?.total_results ? data.results : null;
+
+	useEffect(() => {
+		document.title = `${title} - Movie Lounge`;
+	});
 
 	return (
 		<main>
