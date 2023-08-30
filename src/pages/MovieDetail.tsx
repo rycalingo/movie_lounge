@@ -66,8 +66,8 @@ export const MovieDetail = () => {
 						</div>
 
 						<div className="status">
-							<span className="font-bold">Status: </span>
-							{movie?.status} {movie?.release_date} ({movie?.production_countries?.length ? `${movie?.production_countries[0]?.iso_3166_1}` : "–"})
+							<span className="font-bold">Released: </span>
+							{movie?.release_date}
 						</div>
 						<div className="runtime">
 							<p className="">
