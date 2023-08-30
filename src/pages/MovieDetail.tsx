@@ -1,7 +1,7 @@
-import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import { useFetch } from "../hooks/useFetch";
+import { useTitle } from "../hooks/useTitle";
 
 import no_poster from "../static/images/no_poster.png";
 
@@ -23,9 +23,7 @@ export const MovieDetail = () => {
 		event.target.src = no_poster;
 	};
 
-	useEffect(() => {
-		document.title = `${movie?.title} - Movie Lounge`;
-	});
+	useTitle(`${movie?.title} - Movie Lounge`);
 
 	return (
 		<main>

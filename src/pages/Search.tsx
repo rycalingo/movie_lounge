@@ -3,7 +3,7 @@ import { Movie } from "../models/movie";
 import { useSearchParams } from "react-router-dom";
 
 import { useFetch } from "../hooks/useFetch";
-import { useEffect } from "react";
+import { useTitle } from "../hooks/useTitle";
 
 const key = process.env.REACT_APP_API_KEY || "";
 
@@ -16,9 +16,7 @@ export const Search = ({ apiPath = "", title = "" }) => {
 	console.log(data);
 	const movies = data?.total_results ? data.results : null;
 
-	useEffect(() => {
-		document.title = `${title} - Movie Lounge`;
-	});
+	useTitle(`Search - Movie Lounge`);
 
 	return (
 		<main>

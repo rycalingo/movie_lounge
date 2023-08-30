@@ -1,13 +1,11 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "flowbite-react";
 
 import pagenotfound from "../static/images/pagenotfound.png";
+import { useTitle } from "../hooks/useTitle";
 
 export const PageNotFound = () => {
-	useEffect(() => {
-		document.title = `Page Not Found - Movie Lounge`;
-	});
+	useTitle(`Page Not Found - Movie Lounge`);
 
 	return (
 		<main>
