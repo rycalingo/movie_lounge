@@ -1,6 +1,6 @@
 import { SyntheticEvent, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import logo from "../static/logo.svg";
+import logo_icon from "../static/logo_icon.png";
 
 import { ModeSwitch } from "./ModeSwitch";
 
@@ -39,7 +39,7 @@ export const Header = () => {
 			<nav className="bg-white border-b-2 border-gray-200 dark:bg-gray-900 dark:border-b-1 dark:border-gray-900">
 				<div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 					<Link to="/" className="flex items-center">
-						<img src={logo} className="h-8 mr-3" alt="Movie Lounge Logo" />
+						<img src={logo_icon} className="h-8 mr-3" alt="Movie Lounge Logo" title="Icon by icon_small - https://www.freepik.com/search?format=search&last_filter=type&last_value=icon&query=film%20reel%20logo&selection=1&type=icon" />
 						<span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Movie Lounge</span>
 					</Link>
 					<div id="mobile-menu" className="flex md:order-2">
