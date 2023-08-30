@@ -3,7 +3,7 @@ import { MovieProps } from "../models/movie";
 import no_poster from "../static/images/no_poster.png";
 
 export const Card = ({ movie }: MovieProps) => {
-	const { id, title, poster_path, overview } = movie;
+	const { id, title, poster_path } = movie;
 	const poster_size = "w342/";
 	const img_path = `https://image.tmdb.org/t/p/${poster_size}`;
 
