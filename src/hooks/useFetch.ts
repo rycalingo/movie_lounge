@@ -8,24 +8,27 @@ const [error, setError] = useState<any | null>(null);
 
 
   useEffect(()=>{
+    if (url !== undefined || url !== "") {
 
-    const fetchData = async() => {
-      try {
-      const response = await fetch(url);
-      const results = await response.json();
+      const fetchData = async() => {
+        try {
+        const response = await fetch(url);
+        const results = await response.json();
 
-      setData(results);
-      setLoading(false);
+        setData(results);
+        setLoading(false);
 
-      if ( results.success === false ) throw(results.status_message);
+        if ( results.success === false ) throw(results.status_message);
 
-    } catch (err) {
+        } catch (err) {
 
-      setError(err);
-      setLoading(false);
+          setError(err);
+          setLoading(false);
+        }
+      }
+      fetchData();
     }
-  }
-    fetchData();
+
   }, [url])
 
   return ({data: data, loading: loading, error: error})
