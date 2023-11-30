@@ -12,7 +12,7 @@ export const Card = ({ movie }: MovieProps) => {
 	};
 
 	return (
-		<div className="movie-card max-w-sm bg-white border border-gray-200 rounded-lg shadow mx-auto dark:bg-gray-800 dark:border-gray-700">
+		<div className="movie-card max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 			<Link to={`/movie/${id}`}>
 				<div className="media_poster rounded-t-lg aspect-[2/3] w-full bg-gray-900">
 					<img className="rounded-t-lg object-cover mx-auto h-full" onError={addDefaultSrc} src={`${img_path}${poster_path}`} alt={`${title} Movie Poster`} />
