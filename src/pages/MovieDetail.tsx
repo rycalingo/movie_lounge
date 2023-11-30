@@ -7,8 +7,6 @@ import no_poster from "../static/images/no_poster.png";
 
 const key = process.env.REACT_APP_API_KEY || "";
 
-// "https://api.themoviedb.org/3/movie/615656?api_key=fabb4a30908b66086b46c9b2bac8f1e8"
-
 export const MovieDetail = () => {
 	const param = useParams();
 	const url = `https://api.themoviedb.org/3/movie/${param.id}?api_key=${key}`;
